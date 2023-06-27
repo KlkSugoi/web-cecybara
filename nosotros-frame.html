@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cecybara Studies - Educación Multidisciplinaria</title>
+  <style>
+    /* Estilos CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      color: #eee;
+    }
+
+    header {
+      background-color: #222;
+      padding: 20px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #333;
+      background: linear-gradient(to right, #333, #333);
+      background-clip: padding-box;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+      animation: gradientAnimation 5s infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: left;
+      }
+      50% {
+        background-position: right;
+      }
+      100% {
+        background-position: left;
+      }
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #222;
+      padding: 10px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Cecybara Studies</h1>
+    <p>Preparando a los estudiantes para el mundo actual</p>
+  </header>
+
+  <div class="container">
+    <h2>Enfoque Multidisciplinario</h2>
+    <p>El enfoque de Cecybara Studies no solo beneficia a los estudiantes, sino que también tiene un impacto positivo en la sociedad en general. Al integrar el inglés, el cálculo diferencial, la ecología y la física, la empresa prepara a los estudiantes para enfrentar los desafíos complejos del mundo actual.</p>
+    <p>Al combinar estas disciplinas, Cecybara Studies está formando a estudiantes con habilidades y conocimientos integrales, capaces de abordar problemas complejos desde una perspectiva interdisciplinaria. Esto no solo mejora su capacidad para resolver desafíos académicos, sino que también los prepara para enfrentar los problemas del mundo real, como el cambio climático, la sostenibilidad y la innovación científica.</p>
+    <p>El dominio del inglés les brinda a los estudiantes la capacidad de comunicarse efectivamente en un contexto científico global, lo cual es crucial en una sociedad cada vez más interconectada. El cálculo diferencial les proporciona herramientas para analizar y comprender el cambio y la variación, lo cual es fundamental en numerosos campos científicos. La ecología les permite comprender las interacciones entre los seres vivos y su entorno, promoviendo la conciencia ambiental y la toma de decisiones sostenibles. Por último, la física les proporciona una base sólida para comprender cómo funcionan los fenómenos naturales y cómo se pueden aplicar los principios científicos en diversos contextos.</p>
+    <p>En resumen, el enfoque multidisciplinario de Cecybara Studies redefine el paradigma educativo al integrar el inglés, el cálculo diferencial, la ecología y la física. Este enfoque único brinda a los estudiantes una visión integral del conocimiento y las habilidades necesarias para enfrentar los desafíos actuales y futuros. Al promover la interconexión de disciplinas aparentemente dispares, Cecybara Studies está sentando las bases para una educación más completa y relevante en el mundo actual.</p>
+  </div>
+
+  <div class="container">
+    <h2>Equipo de programadores de Cecybara Studies</h2>
+    <ul>
+      <li>Sophia Alcantara - Diseñadora</li>
+      <li>Meylin Alvarez - Diseñadora</li>
+      <li>Fernando Cortes - Co-diseñador</li>
+      <li>Alan Contreras &amp; Orlando Barrera - Recolectores de información</li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h2>Agradecimientos</h2>
+    <p>Agradecemos a:</p>
+    <ul>
+      <li>Ing. Valentin Vargas</li>
+      <li>Colegio de Estudios Científicos y Tecnológicos del Estado de México, Plantel Cuautitlán</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Cecybara Studies. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Animación de desvanecimiento en el encabezado
+    const header = document.querySelector('header');
+    setTimeout(() => {
+      header.style.opacity = 1;
+    }, 500);
+
+    // Animación de aparición de los contenedores
+    const containers = document.querySelectorAll('.container');
+    setTimeout(() => {
+      containers.forEach(container => {
+        container.style.opacity = 1;
+        container.style.transform = 'translateY(0)';
+      });
+    }, 1000);
+  </script>
+</body>
+
+</html>

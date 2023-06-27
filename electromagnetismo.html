@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ondas Electromagnéticas</title>
+    <style>
+
+#chart {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Ondas Electromagnéticas</h1>
+
+        <div class="section">
+            <h2>¿Qué son las ondas electromagnéticas?</h2>
+            <p>Las ondas electromagnéticas son una forma de radiación compuesta por campos eléctricos y magnéticos que se propagan a través del espacio. Estas ondas no requieren un medio material para su transmisión, lo que significa que pueden moverse a través del vacío.</p>
+        </div>
+
+        <div class="section">
+            <h2>Características de las ondas electromagnéticas</h2>
+            <p>Las ondas electromagnéticas tienen las siguientes características:</p>
+            <ul>
+                <li>Se propagan a la velocidad de la luz en el vacío.</li>
+                <li>Pueden tener diferentes longitudes de onda y frecuencias, lo que determina su posición en el espectro electromagnético.</li>
+                <li>Incluyen tipos de ondas como la luz visible, las ondas de radio, los rayos X y los rayos gamma.</li>
+                <li>Pueden ser absorbidas, reflejadas o refractadas al interactuar con diferentes materiales.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Usos de las ondas electromagnéticas</h2>
+            <p>Las ondas electromagnéticas tienen una amplia variedad de aplicaciones en diferentes campos, entre ellos:</p>
+            <ul>
+                <li>Comunicaciones inalámbricas, incluyendo radio, televisión y telefonía móvil.</li>
+                <li>Tecnología de radiofrecuencia, utilizada en radares y sistemas de navegación.</li>
+                <li>Imágenes médicas, como la resonancia magnética y los rayos X.</li>
+                <li>Tecnología de microondas, presente en hornos y enlaces de comunicación satelital.</li>
+                <li>Transmisión de energía, como en la tecnología de carga inalámbrica.</li>
+                <li>Investigación científica, incluyendo la exploración del universo mediante telescopios.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="chart"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Datos para la gráfica
+            var x = [];
+            var y = [];
+
+            // Generar los datos de la función
+            for (var i = -10; i <= 10; i += 0.1) {
+                x.push(i);
+                y.push(Math.sin(i));
+            }
+
+            // Configurar el trazado de la gráfica
+            var trace = {
+                x: x,
+                y: y,
+                mode: "lines",
+                type: "scatter"
+            };
+
+            // Configurar el diseño de la gráfica
+            var layout = {
+                title: "Así se vería en una gráfica la onda",
+                xaxis: {
+                    title: "x"
+                },
+                yaxis: {
+                    title: "y"
+                }
+            };
+
+            // Crear la gráfica
+            Plotly.newPlot("chart", [trace], layout);
+        });
+
+    </script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</body>
+</html>

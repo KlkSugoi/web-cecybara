@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Ecuaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-group input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #444;
+            color: #fff;
+        }
+
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .message {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Ecuaciones</h1>
+
+        <div class="input-group">
+            <label for="equation">Ecuación:</label>
+            <input type="text" id="equation" placeholder="Ejemplo: (2*x) + 3">
+        </div>
+
+        <div class="input-group">
+            <label for="variable">Valor de la Incógnita:</label>
+            <input type="text" id="variable" placeholder="Ejemplo: 3">
+        </div>
+
+        <div id="result"></div>
+
+        <div class="message">En vez de poner 2x, favor de colocar (2*x) ya que el sistema no lee valores e incógnitas juntos<br>de igual modo en ves de "x^2" coloque "x*x" ya que no lee correctamente las potencias</div>
+    </div>
+
+    <script>
+        function calculate() {
+            var equationInput = document.getElementById('equation').value;
+            var variableInput = document.getElementById('variable').value;
+
+            try {
+                var equation = equationInput.replace(/x/g, '(' + variableInput + ')');
+                var result = eval(equation);
+                document.getElementById('result').innerText = 'El resultado es: ' + result;
+            } catch (error) {
+                document.getElementById('result').innerText = 'Error al calcular el resultado';
+            }
+        }
+
+        var equationInput = document.getElementById('equation');
+        equationInput.addEventListener('input', calculate);
+
+        var variableInput = document.getElementById('variable');
+        variableInput.addEventListener('input', calculate);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+.caja-respuesta-uno {
+    border: solid 0px;
+    border-bottom: solid 1px;
+    border-bottom-color: dimgray;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    left: 7%;
+    top: 20.6%;
+    
+}
+
+.pregunta-uno {
+    
+}
+
+.pregunta-parte-uno {
+    position: absolute;
+    left: 0%;
+}
+
+.pregunta-parte-dos {
+    position:relative;
+    top: 2.5vh;
+    left: 20.5%;
+}

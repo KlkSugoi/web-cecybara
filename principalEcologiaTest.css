@@ -1,0 +1,108 @@
+.cuerpo{
+    
+    background-color: #dedede;
+    padding: 30px;
+}
+
+
+
+.pregunta-1 {
+    width: 40%;
+    height: 20%;
+    font-size: 40px;
+    font-family: sans-serif;
+    background-color: rgba(153, 50, 204, 0.46);
+    border: solid 5px;
+    border-color: darkorchid;
+    padding: 2px;
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+}
+
+
+.btn-respuesta-1 {
+    font-size: 10px;
+    font-family: sans-serif;
+    background-color: rgba(153, 50, 204, 0.46);
+    border: solid 5px;
+    border-color: darkorchid;
+    padding: 2vh;
+    border-radius: 2px;
+    text-align: center;
+    position:relative;
+    left: 20%;
+    color: white;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.btn-respuesta-1:hover,
+.btn-respuesta-1:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  -webkit-transform: translateY(0.50em);
+          transform: translateX(0.50em);
+}
+.btn-respuesta-2 {
+    font-size: 10px;
+    font-family: sans-serif;
+    background-color: rgba(153, 50, 204, 0.46);
+    border: solid 5px;
+    border-color: darkorchid;
+    padding: 2vh;
+    border-radius: 2px;
+    text-align: center;
+    position:relative;
+    left: 40%;
+    color: white;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.btn-respuesta-2:hover,
+.btn-respuesta-2:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  -webkit-transform: translateY(0.50em);
+          transform: translateX(0.50em);
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+    width: 200px;
+    height: 200px;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+}
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: #00A4BD;
+}
+
+
+.mapa-indicador {
+    font-size: 20px;
+    font-family: sans-serif;
+    background-color: rgba(153, 50, 204, 0.46);
+    border: solid 5px;
+    border-color: darkorchid;
+    padding: 2vh;
+    border-radius: 2px;
+    text-align: center;
+    position:relative;
+    left: 40%;
+    color: white;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bloc de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .note {
+            margin-bottom: 20px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .note textarea {
+            width: 100%;
+            height: 300px;
+            padding: 8px;
+            border: none;
+            border-radius: 3px;
+            background-color: #444;
+            color: #fff;
+            resize: none;
+            font-family: inherit;
+        }
+
+        .note textarea:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registra tús valores</h1>
+
+        <div class="note">
+            <textarea id="noteContent" placeholder="Escribe tus valores aquí..."></textarea>
+        </div>
+    </div>
+
+    <script>
+        // Obtener el elemento del área de texto de la nota
+        var noteContent = document.getElementById('noteContent');
+
+        // Escuchar el evento 'input' para guardar automáticamente los cambios
+        noteContent.addEventListener('input', function() {
+            // Obtener el contenido de la nota y guardarlo en el almacenamiento local
+            var content = noteContent.value;
+            localStorage.setItem('note', content);
+        });
+
+        // Cargar el contenido de la nota desde el almacenamiento local
+        var savedNote = localStorage.getItem('note');
+        if (savedNote) {
+            noteContent.value = savedNote;
+        }
+    </script>
+</body>
+</html>

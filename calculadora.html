@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora Científica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .calculator {
+      width: 100%;
+      max-width: 600px;
+      background-color: #252525;
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      overflow: hidden;
+    }
+    .calculator input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 24px;
+      text-align: right;
+      border: none;
+      outline: none;
+      background-color: #333;
+      color: #fff;
+    }
+    .calculator .buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .calculator .buttons button {
+      padding: 15px 0;
+      font-size: 18px;
+      background-color: #333;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      color: #fff;
+    }
+    .calculator .buttons button:hover {
+      background-color: #555;
+    }
+    .calculator .buttons button:active {
+      background-color: #777;
+    }
+    .calculator .buttons button.operator {
+      background-color: #666;
+    }
+    .calculator .buttons button.operator:hover {
+      background-color: #888;
+    }
+    .calculator .buttons button.operator:active {
+      background-color: #aaa;
+    }
+    .calculator .buttons button.equal {
+      background-color: #555;
+    }
+    .calculator .buttons button.equal:hover {
+      background-color: #777;
+    }
+    .calculator .buttons button.equal:active {
+      background-color: #999;
+    }
+    .calculator .buttons button.clear {
+      background-color: #666;
+    }
+    .calculator .buttons button.clear:hover {
+      background-color: #888;
+    }
+    .calculator .buttons button.clear:active {
+      background-color: #aaa;
+    }
+    .calculator .buttons button.function {
+      background-color: #252525;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .calculator .buttons button.function:hover {
+      background-color: #555;
+    }
+    .calculator .buttons button.function:active {
+      background-color: #777;
+    }
+    .calculator .screen-animation {
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <div class="buttons">
+      <button onclick="appendToResult('7')">7</button>
+      <button onclick="appendToResult('8')">8</button>
+      <button onclick="appendToResult('9')">9</button>
+      <button onclick="appendToResult('/')">/</button>
+      <button onclick="clearResult()" class="clear">C</button>
+      <button onclick="appendToResult('4')">4</button>
+      <button onclick="appendToResult('5')">5</button>
+      <button onclick="appendToResult('6')">6</button>
+      <button onclick="appendToResult('*')">x</button>
+      <button onclick="appendToResult('sin(')" class="function">sin</button>
+      <button onclick="appendToResult('1')">1</button>
+      <button onclick="appendToResult('2')">2</button>
+      <button onclick="appendToResult('3')">3</button>
+      <button onclick="appendToResult('-')">-</button>
+      <button onclick="appendToResult('cos(')" class="function">cos</button>
+      <button onclick="appendToResult('0')">0</button>
+      <button onclick="appendToResult('.')">.</button>
+      <button onclick="calculate()" class="equal">=</button>
+      <button onclick="appendToResult('+')">+</button>
+      <button onclick="appendToResult('tan(')" class="function">tan</button>
+      <button onclick="appendToResult('(')">(</button>
+      <button onclick="appendToResult(')')">)</button>
+      <button onclick="appendToResult('^')">^</button>
+      <button onclick="appendToResult('sqrt(')" class="function">√</button>
+    </div>
+  </div>
+
+  <script>
+    function appendToResult(value) {
+      document.getElementById('result').value += value;
+    }
+
+    function clearResult() {
+      document.getElementById('result').value = '';
+    }
+
+    function calculate() {
+      var result = eval(document.getElementById('result').value);
+      document.getElementById('result').value = result;
+      animateScreen();
+    }
+
+    function animateScreen() {
+      var screen = document.getElementById('result');
+      screen.classList.add('screen-animation');
+      setTimeout(function() {
+        screen.classList.remove('screen-animation');
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfica de una Función</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+        }
+        
+        h1 {
+            margin-top: 20px;
+        }
+        
+        canvas {
+            margin-top: 20px;
+            display: block;
+            width: 95%;
+            height: calc(100vh - 180px);
+            border: 1px solid #ccc;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #222;
+        }
+        
+        #inputValues {
+            margin-top: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        button {
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gráfica de una Función</h1>
+    <canvas id="myChart"></canvas>
+
+    <div id="inputValues">
+        <label for="dataInput">Ingresar Valores de Datos (separados por comas):</label>
+        <input type="text" id="dataInput" placeholder="Ejemplo: 5, 2, 9, 1, 6, 3, 4, 7, 8, 10">
+        <button id="updateButton">Actualizar Gráfica</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dataValues = [3, 4, 6, 8, 2, 7, 1, 5, 9, 10]; // Datos iniciales
+            
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                    datasets: [{
+                        label: 'Función',
+                        data: dataValues, // Utiliza la variable para los datos
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#fff'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Actualizar gráfica con nuevos datos
+            function updateChart() {
+                var input = document.getElementById('dataInput').value;
+                var values = input.split(',').map(function(value) {
+                    return parseFloat(value.trim());
+                });
+                if (values.length === 10) {
+                    dataValues = values;
+                    chart.data.labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+                    chart.data.datasets[0].data = dataValues;
+                    chart.update();
+                } else {
+                    alert('Por favor, ingrese 10 valores separados por comas.');
+                }
+            }
+
+            // Asociar evento al botón de actualización
+            var updateButton = document.getElementById('updateButton');
+            updateButton.addEventListener('click', updateChart);
+        });
+    </script>
+</body>
+</html>
